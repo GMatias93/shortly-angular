@@ -20,6 +20,7 @@ angular.module('shortly.services', [])
       data: link
     })
     .then(function(resp) {
+      console.log('resp--------------------', resp.data);
       return resp.data;
     })
 

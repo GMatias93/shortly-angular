@@ -1,5 +1,12 @@
-<div id='container'>
+<div id='container' ng-controller='ShortenController'>
 <!-- Your code here -->
+<form name ='shortLink' ng-submit='addLink()'>
+  <input type = 'url' name='input' ng-model='urlInput' required></input>
+  <div role='alert'>
+    <span class='error' ng-show='shortLink.input.$error.required'>Required!</span>
+    <span class='error' ng-show='shortLink.input.$error.url'>Not a Valid URL!</span>
+  </div>
+</form>
 
 </div>
 
