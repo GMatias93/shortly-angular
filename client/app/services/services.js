@@ -8,7 +8,6 @@ angular.module('shortly.services', [])
       url: '/api/links'
     })
     .then(function(resp) {
-      // console.log('this is response.data', resp.data);
       return resp.data;
     })
 
@@ -21,7 +20,6 @@ angular.module('shortly.services', [])
       data: link
     })
     .then(function(resp) {
-      console.log('this is response.data', resp.data);
       return resp.data;
     })
 

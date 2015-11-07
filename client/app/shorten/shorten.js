@@ -7,14 +7,12 @@ angular.module('shortly.shorten', [])
   $scope.addLink = function(){
     Links.addLink($scope.link)
       .then(function(data){
-        
+        //something
       })
       .catch(function(error){
         console.error(error);
       })
 
   };
-
-  $scope.addLink(Links)
 
 });
