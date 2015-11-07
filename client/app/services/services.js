@@ -8,6 +8,19 @@ angular.module('shortly.services', [])
       url: '/api/links'
     })
     .then(function(resp) {
+      // console.log('this is response.data', resp.data);
+      return resp.data;
+    })
+
+  };
+
+  var addLink = function(link){
+    return $http({
+      method: 'POST',
+      url: '/api/links',
+      data: link
+    })
+    .then(function(resp) {
       console.log('this is response.data', resp.data);
       return resp.data;
     })
@@ -15,7 +28,8 @@ angular.module('shortly.services', [])
   };
 
   return {
-    getLinks: getLinks
+    getLinks: getLinks,
+    addLink: addLink
   };
 
 })
