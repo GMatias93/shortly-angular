@@ -19,10 +19,10 @@ angular.module('shortly.services', [])
       url: '/api/links',
       data: link
     })
-    .then(function(resp) {
-      console.log('resp--------------------', resp.data);
-      return resp.data;
-    })
+    // .then(function(resp) {
+    //   console.log('resp--------------------', resp.data);
+    //   return resp.data;
+    // })
 
   };
 

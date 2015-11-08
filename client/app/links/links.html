@@ -1,12 +1,19 @@
 <div id='container' >
   <!-- Your html here -->
+    <a href = "#/shorten" >Shorten</a>
+
   <h1>Links</h1>
-  <div ng-controller = "LinksController">
-    <ul>
-      <li ng-repeat='link in data'>{{link}}</li>
+  <div>
+    <form>
+      <input ng-model = 'link.title'></input>
+    </form>
+    <ul ng-repeat='link in data.links | filter: link'>
+      <li>
+        <a href={{link.url}}>{{link.title}}</a> <br>
+        <a href={{link.url}}>{{link.base_url + '/' +link.code}}</a> <br> <span>Visits: {{link.visits}}</span>
+      </li>
     </ul>
   </div>
-  <!-- <a href = "#links">Links</a>  -->
 </div>
 
 
