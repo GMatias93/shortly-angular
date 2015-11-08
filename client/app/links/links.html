@@ -1,17 +1,26 @@
 <div id='container' >
   <!-- Your html here -->
-    <a href = "#/shorten" >Shorten</a>
-
+  <div class = 'navigation'>
+    <ul>
+      <li>
+        <a href = "#/shorten" >Shorten</a>
+      </li>
+    </ul>
+  </div>
   <h1>Links</h1>
   <div>
     <form>
-      <input ng-model = 'link.title'></input>
+      <input placeholder = "search" ng-model = 'link.title'></input>
     </form>
-    <ul ng-repeat='link in data.links | filter: link | orderBy: "-visits"'>
-      <li>
-        <a href={{link.url}}>{{link.title}}</a> <br>
+    <ul class = "link" ng-repeat='link in data.links | filter: link | orderBy: "-visits"'>
+      <li class = "link">
+      <img src = '../assets/unicorn.jpg'>
+        <span class = 'visits'> Visits: 
+          <span class = 'count'>{{link.visits}}</span>
+        </span>
+        <a class = 'title' href={{link.url}}>{{link.title}}</a> <br>
+        <span class = 'original'>{{link.url}}</span> <br>
         <a href='http://localhost:8000/api/links/{{link.code}}'>{{link.base_url + '/' +link.code}}</a> <br> 
-        <span class = 'count'>Visits: {{link.visits}}</span>
       </li>
     </ul>
   </div>

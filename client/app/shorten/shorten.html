@@ -1,15 +1,29 @@
 <div id='container'>
 <!-- Your code here -->
-  <a href = "#/Links">Links</a>
-
-
-<form name ='shortLink' ng-submit='addLink()'>
-  <input type = 'url' name='input' ng-model='input.url' required></input>
-  <div role='alert'>
-    <span class='error' ng-show='shortLink.input.$error.required'>Required!</span>
-    <span class='error' ng-show='shortLink.input.$error.url'>Not a Valid URL!</span>
+  
+  <div class = 'navigation'>
+    <ul>
+      <li>
+        <a href = "#/Links">Links</a>
+      </li>
+    </ul>
   </div>
-</form>
+
+<h1>Shorten Links Here</h1>
+
+<div class='creator' role='alert'>
+  <form name ='shortLink' ng-submit='addLink()'>
+  <div>
+      <input class= "error" type = 'url' name='input' ng-model='input.url' required ng-class = "{'error': shortLink.$invalid && shortlLink.$dirty}"></input>
+  <div>
+  </form>
+  <div ng-if='shortLink.input.$error.required && shortLink.$dirty' class = "message">
+    <h2>Required!</h2>
+  </div>
+  <div ng-show='shortLink.input.$error.url && shortLink.$dirty' class = "message">
+    <h2>Not a Valid URL!</h2>
+  </div>
+</div>
 
 </div>
 
