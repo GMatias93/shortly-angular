@@ -7,10 +7,11 @@
     <form>
       <input ng-model = 'link.title'></input>
     </form>
-    <ul ng-repeat='link in data.links | filter: link'>
+    <ul ng-repeat='link in data.links | filter: link | orderBy: "-visits"'>
       <li>
         <a href={{link.url}}>{{link.title}}</a> <br>
-        <a href={{link.url}}>{{link.base_url + '/' +link.code}}</a> <br> <span>Visits: {{link.visits}}</span>
+        <a href='http://localhost:8000/api/links/{{link.code}}'>{{link.base_url + '/' +link.code}}</a> <br> 
+        <span class = 'count'>Visits: {{link.visits}}</span>
       </li>
     </ul>
   </div>
